@@ -89,7 +89,7 @@ newdf= (
 newdf1 = newdf.drop_duplicates()
 
 
-user_pref = st.sidebar.number_input("Please enter the user Id", value=0, min_value=0, step=1, max_value=999)
+user_pref = st.sidebar.number_input("Please enter the user Id", value=0, min_value=0, step=1, max_value=608)
 user_pref1 =int(user_pref)
 if(user_pref > 0):
     def get_user_prefered_item(newdf1: pd.DataFrame, userId_x: int):
