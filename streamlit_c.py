@@ -122,7 +122,7 @@ def get_sparse_matrix(newdf1: pd.DataFrame):
         .pivot(index='userId_x', columns='title', values='rating')
     )
 
-st.text("Select a movie you like ")
+st.sidebar.text("Select a movie you like ")
 movie_name = st.sidebar.selectbox(
     ' ',
      (matix_movies['title'].unique()))
