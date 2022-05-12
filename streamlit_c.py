@@ -122,14 +122,18 @@ def get_sparse_matrix(newdf1: pd.DataFrame):
         .pivot(index='userId_x', columns='title', values='rating')
     )
 
-movie_name = st.sidebar.text_input("Please enter a movie that you like")
-
+st.text("Select a movie you like ")
+movie_name = st.sidebar.selectbox(
+    ' ',
+     (matix_movies['title'].unique()))
+#movie_name = st.sidebar.text_input("Please enter a movie that you like")
 if(movie_name != ''):
 # py function item based recommender
     def item_based_recommender(dense_matrix: pd.DataFrame, title: str, n: int=5):
         sparse_matrix = get_sparse_matrix(newdf1)
         return(
         sparse_matrix
+            
             .corrwith(sparse_matrix[title])
             .sort_values(ascending=False)
             .index
